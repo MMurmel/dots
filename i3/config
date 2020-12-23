@@ -25,7 +25,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 # theme 
 # =========================
 # Font for window titles (which there are none by default)
-font pango:RobotoMono Nerd Font Mono 12
+font pango: NotoSansMono Nerd Font 12
 
 # window border
 for_window [class=".*"] border pixel 4
@@ -81,7 +81,7 @@ bar {
 	  urgent_workspace	$nord11 $nord11 $nord6
 	}
 
-	font pango:RobotoMono Nerd Font Mono 12
+	font pango: NotoSansMono Nerd Font 12
         strip_workspace_numbers no
 
 	# ignore scroll wheel
@@ -121,7 +121,7 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+c kill
 
 # rofi
-bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/nord.rasi
+bindsym $mod+d exec rofi -show drun
 bindsym $mod+Tab exec rofi -show window -theme ~/.config/rofi/nord.rasi 
 
 # hide window
