@@ -8,6 +8,7 @@
 - link:
     ~/.config/i3:
     ~/.config/nvim:
+    ~/.config/ranger:
     ~/.alacritty.yml:
 
 - shell:
