@@ -4,11 +4,14 @@ SHELL=/bin/bash
 
 divider = "----------------------"
 
+# dependencies
+ppas = ppa:mmstick76/alacritty
+dependencies_apt = python3-dev python3-pip python3-setuptools
+
 # packages to be installed via apt
 wm =sway rofi redshift ranger nitrogen
-essentials = build-essential neovim git arandr htop
+essentials = build-essential neovim git alacritty arandr htop
 software = firefox thunderbird nemo telegram-desktop nextcloud-desktop grub-customizer
-dependencies_apt = python3-dev python3-pip python3-setuptools
 
 # packages not available via apt
 snap = bitwarden discord spotify
@@ -22,6 +25,11 @@ dependencies:
 	@echo "Installing dependencies."
 	@echo $(divider)
 	apt install $(dependencies_apt)
+	
+	@echo $(divider)
+	@echo "Adding PPAs"
+	$(foreach ppa,$(ppas), add-apt-repository $(ppa))
+	@echo $(divider)
 	
 	@echo $(divider)
 	@echo "finished installing dependencies."
