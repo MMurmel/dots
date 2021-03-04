@@ -7,10 +7,10 @@
 
 - link:
     ~/.gitconfig:
-    ~/.config/i3:
-    ~/.config/nvim:
-    ~/.config/ranger:
-    ~/.alacritty.yml:
+    ~/.config/:
+      glob: true
+      path: config/*
+      relink: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
