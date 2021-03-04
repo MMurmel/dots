@@ -1,0 +1,11 @@
+[core]
+	filemode = false
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Max Moeller
+	email = maximilian.moeller@mailbox.tu-dresden.de
+[alias]
+	tree = log --oneline --decorate --all --graph
+[pull]
+	rebase = false

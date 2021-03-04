@@ -6,6 +6,7 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/.gitconfig:
     ~/.config/i3:
     ~/.config/nvim:
     ~/.config/ranger:
