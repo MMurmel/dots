@@ -7,7 +7,8 @@ divider = "----------------------"
 # dependencies
 ppas = ppa:mmstick76/alacritty
 dependencies_apt = python3-dev python3-pip python3-setuptools
-fonts := $(shell find ./fonts -name '*.zip') 
+fontfile = ./fonts
+fonts = $(shell cat $(fontfile))
 
 # packages to be installed via apt
 wm =sway rofi redshift ranger nitrogen
@@ -19,7 +20,7 @@ snap = bitwarden discord spotify
 snap_classic = code
 pip = thefuck
 
-all: dependencies main_installations cleanup
+all: dependencies main_installations fonts cleanup
 
 dependencies:
 	@echo $(divider)
@@ -57,8 +58,8 @@ main_installations:
 fonts:
 	@echo $(divider)
 	@echo "Extracting fonts."
-	$(foreach font,$(fonts), unzip $(font) -d /usr/share/fonts/truetype/) 
-	
+	$(foreach font,$(fonts), wget $(font) -O temp.zip; unzip temp.zip -d /usr/share/fonts/truetype/; rm temp.zip;)
+	fc-cache -f -v
 
 cleanup:
 	@echo $(divider)
