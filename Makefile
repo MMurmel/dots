@@ -12,7 +12,7 @@ dependencies_apt = python3-dev python3-pip python3-setuptools
 
 # packages not available via apt
 snap = bitwarden discord spotify
-snap_classic = code alacritty
+snap_classic = code
 pip = thefuck
 
 all: dependencies main_installations cleanup
