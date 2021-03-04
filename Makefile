@@ -1,12 +1,13 @@
 # You probably need to install built-essentials beforehand to run this makefile.
 SHELL=/bin/bash
-.PHONY: all dependencies main_installations cleanup
+.PHONY: all dependencies main_installations cleanup fonts
 
 divider = "----------------------"
 
 # dependencies
 ppas = ppa:mmstick76/alacritty
 dependencies_apt = python3-dev python3-pip python3-setuptools
+fonts := $(shell find ./fonts -name '*.zip') 
 
 # packages to be installed via apt
 wm =sway rofi redshift ranger nitrogen
@@ -53,6 +54,11 @@ main_installations:
 	
 	@echo $(divider)
 	@echo "Done installing packages."
+fonts:
+	@echo $(divider)
+	@echo "Extracting fonts."
+	$(foreach font,$(fonts), unzip $(font) -d /usr/share/fonts/truetype/) 
+	
 
 cleanup:
 	@echo $(divider)
