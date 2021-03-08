@@ -1,30 +1,34 @@
+" Check if vim-plug is installed 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" === PLUGINS ===
+call plug#begin()
+Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'arcticicestudio/nord-vim'
+Plug 'lervag/vimtex'
+call plug#end()
+
+" === SETTINGS ===
 set nocompatible
 set number
 set relativenumber
 set updatetime=100
 
+" === KEYMAPS ===
+" Set ' ' (space) as leader key
+let mapleader = " "
 
-" === PLUGINS ===
-
-call plug#begin()
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'mhinz/vim-startify'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'arcticicestudio/nord-vim'
-call plug#end()
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
 
 
 " === THEME ===
-
 " colorscheme nord
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
@@ -45,26 +49,14 @@ let g:lightline = {
   \   }
   \ }
 
-let g:lightline.separator = {
-	\   'left': '', 'right': ''
-  \}
-
-let g:lightline.subseparator = {
-	\   'left': '', 'right': '' 
-  \}
-
-
-"=== KEYBINDINGS ===
-
-map <C-n> :NERDTreeToggle<CR>
+let g:lightline.separator = {'left': '', 'right': ''}
+let g:lightline.subseparator = {'left': '', 'right': ''}
 
 
 " === NERD TREE configs ===
-
 " automatically start NERDTree on opening vim without file specification
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * wincmd p
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " automatically close NERDTree if it is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -72,16 +64,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeQuitOnOpen = 0
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-let g:NERDTreeGitStatusMapCustom = {
-    \ "Modified"  : "~",
-    \ "Staged"    : "+",
-    \ "Untracked" : "*",
-    \ "Renamed"   : "→",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "ø",
-    \ "Dirty"     : "~",
-    \ "Clean"     : "«»",
-    \ 'Ignored'   : "¬",
-    \ "Unknown"   : "?"
-    \ }
+let g:NERDTreeGitStatusUseNerdFonts = 1
