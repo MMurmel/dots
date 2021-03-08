@@ -21,6 +21,7 @@ htop
 gparted
 lua5.3
 nemo
+texlive-full
 
 # web
 firefox

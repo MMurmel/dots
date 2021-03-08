@@ -5,7 +5,7 @@ SHELL=/bin/bash
 divider = "========================================="
 
 # root dir for installation lists
-dir = ./installation/
+dir = ./packages/
 
 # lists of packages by different installation methods
 # ignore lines starting with '#' and empty lines
