@@ -1,0 +1,32 @@
+# dependencies
+python3-dev
+python3-pip
+python3-setuptools
+
+# window manager and ricing
+awesome
+rofi
+redshift
+ranger
+nitrogen
+grub-customizer
+
+# essentials and console tools
+alacritty
+build-essential
+neovim
+git
+arandr
+htop
+gparted
+lua5.3
+nemo
+
+# web
+firefox
+thunderbird
+telegram-desktop
+nextcloud-desktop
+
+# entertainment
+steam

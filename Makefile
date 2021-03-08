@@ -2,64 +2,94 @@
 SHELL=/bin/bash
 .PHONY: all dependencies main_installations cleanup fonts
 
-divider = "----------------------"
+divider = "========================================="
 
-# dependencies
-ppas = ppa:mmstick76/alacritty
-dependencies_apt = python3-dev python3-pip python3-setuptools
-fontfile = ./fonts
-fonts = $(shell cat $(fontfile))
+# root dir for installation lists
+dir = ./installation/
 
-# packages to be installed via apt
-wm =sway rofi redshift ranger nitrogen
-essentials = build-essential neovim git alacritty arandr htop
-software = firefox thunderbird nemo telegram-desktop nextcloud-desktop grub-customizer
+# lists of packages by different installation methods
+# ignore lines starting with '#' and empty lines
+# this enables better seperation in the list files
+fonts = $(shell grep "^[^\#]" $(dir)fonts)
+ppas = $(shell grep "^[^\#]" $(dir)ppas)
+apt = $(shell grep "^[^\#]" $(dir)apt)
+pip = $(shell grep "^[^\#]" $(dir)pip)
+snaps = $(shell grep "^[^\#]" $(dir)snap)
+snaps_classic = $(shell grep "^[^\#]" $(dir)snap-classic)
 
-# packages not available via apt
-snap = bitwarden discord spotify
-snap_classic = code
-pip = thefuck
+all: fonts ppas apt snaps pip cleanup 
+core: apt snaps pip cleanup
 
-all: dependencies main_installations fonts cleanup
-
-dependencies:
+info:
 	@echo $(divider)
-	@echo "Installing dependencies."
-	@echo $(divider)
-	apt install $(dependencies_apt)
-	
-	@echo $(divider)
-	@echo "Adding PPAs"
-	$(foreach ppa,$(ppas), add-apt-repository $(ppa))
+	@echo "Following packages are listed:"
 	@echo $(divider)
 	
+	@echo "Fonts:"
+	@echo
+	@echo -e $(fonts) | tr ' ' '\n'
 	@echo $(divider)
-	@echo "finished installing dependencies."
-
-main_installations:
-	@echo $(divider)
-	@echo "Installing main packages."
-	@echo $(divider)
-	apt install $(wm) $(essentials) $(software)
 	
+	@echo "PPAs:"
+	@echo
+	@echo -e $(ppas) | tr ' ' '\n'
 	@echo $(divider)
-	@echo "Installing snap packages."
-	@echo $(divider)
-	$(foreach package,$(snap), snap install $(package);)
-	$(foreach package,$(snap_classic),snap install $(package) --classic;)
 	
+	@echo "Apt-packages:"
+	@echo
+	@echo -e $(apt) | tr ' ' '\n'
 	@echo $(divider)
-	@echo "Installing pip packages. This might take a while..."
-	@echo $(divider)
-	pip3 install $(pip)
 	
+	@echo "Pip-packages:"
+	@echo
+	@echo -e $(pip) | tr ' ' '\n'
 	@echo $(divider)
-	@echo "Done installing packages."
+	
+	@echo "Snap-packages:"
+	@echo
+	@echo -e $(snaps) | tr ' ' '\n'
+	@echo -e $(snaps_classic) | tr ' ' '\n'
+	@echo $(divider)
+	
 fonts:
 	@echo $(divider)
 	@echo "Extracting fonts."
+	@echo $(divider)
 	$(foreach font,$(fonts), wget $(font) -O temp.zip; unzip temp.zip -d /usr/share/fonts/truetype/; rm temp.zip;)
 	fc-cache -f -v
+
+ppas:	
+	@echo $(divider)
+	@echo "Adding PPAs"
+	@echo $(divider)
+	$(foreach ppa,$(ppas), add-apt-repository $(ppa))
+	@echo $(divider)
+	@echo "Finished installing ppas."
+
+apt:
+	@echo $(divider)
+	@echo "Installing apt packages."
+	@echo $(divider)
+	apt install $(apt)
+	@echo $(divider)
+	@echo "Done installing apt packages."
+	
+snaps:
+	@echo $(divider)
+	@echo "Installing snap packages."
+	@echo $(divider)
+	$(foreach package,$(snaps), snap install $(package);)
+	$(foreach package,$(snaps_classic), snap install $(package) --classic;)
+	@echo $(divider)
+	@echo "Done installing snap packages."
+
+pip:
+	@echo $(divider)
+	@echo "Installing pip packages."
+	@echo $(divider)
+	pip3 install $(pip)
+	@echo $(divider)
+	@echo "Done installing pip packages."
 
 cleanup:
 	@echo $(divider)
