@@ -6,8 +6,8 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.gitconfig:
-    ~/.bash_aliases:
+    ~/.gitconfig: config/gitconfig
+    ~/.bash_aliases: config/bash_aliases
     ~/.config/:
       glob: true
       path: config/*
