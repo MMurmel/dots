@@ -1,3 +1,3 @@
 #since vim plug installs the plugins in nvims config folder
 config/nvim/*
-!config/nvim/init.vim
+!config/nvim/*.vim
