@@ -14,6 +14,7 @@ set splitbelow " horizontal splits will automatically be below
 set splitright " vertical splits will automatically be to the right
 set nomodeline " fixes modeline security issue
 set encoding=utf8
+set wildmode=longest,list   " get bash-like tab completions
 
 " colorscheme
 set termguicolors " use true colors
