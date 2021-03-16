@@ -18,6 +18,18 @@ Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 call plug#end()
 
+" === LIGHTLINE config ===
+let g:lightline = {
+  \   'colorscheme': 'onedark',
+  \   'active': {
+  \     'left':[ [ 'mode', 'paste' ],
+  \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]]},
+  \   'component': {'lineinfo': '%3l:%-2v'},
+  \   'component_function': {'gitbranch': 'fugitive#head'},
+  \   'separator':{'left': '', 'right': ''},
+  \   'subseparator':{'left': '', 'right': ''},
+  \ }
+
 " === NERD TREE configs ===
 " automatically start NERDTree on opening vim without file specification
 autocmd StdinReadPre * let s:std_in=1
