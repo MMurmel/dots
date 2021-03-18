@@ -4,7 +4,7 @@ python3-pip
 python3-setuptools
 
 # window manager and ricing
-awesome
+regolith-desktop-standard
 rofi
 redshift
 ranger

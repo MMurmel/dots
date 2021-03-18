@@ -17,7 +17,7 @@ pip = $(shell grep "^[^\#]" $(dir)pip)
 snaps = $(shell grep "^[^\#]" $(dir)snap)
 snaps_classic = $(shell grep "^[^\#]" $(dir)snap-classic)
 
-all: fonts ppas apt snaps pip cleanup 
+all: ppas apt snaps pip fonts cleanup 
 core: apt snaps pip cleanup
 
 info:
@@ -62,7 +62,7 @@ ppas:
 	@echo $(divider)
 	@echo "Adding PPAs"
 	@echo $(divider)
-	$(foreach ppa,$(ppas), add-apt-repository $(ppa))
+	$(foreach ppa, $(ppas), if ! grep -q "^deb .*${ppa}" /etc/apt/sources.list /etc/apt/sources.list.d/*; then add-apt-repository ppa:${ppa}; fi;)
 	@echo $(divider)
 	@echo "Finished installing ppas."
 
