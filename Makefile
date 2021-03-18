@@ -62,6 +62,7 @@ ppas:
 	@echo $(divider)
 	@echo "Adding PPAs"
 	@echo $(divider)
+	# only add ppas that are not already present (i.e. appear in the given directories)
 	$(foreach ppa, $(ppas), if ! grep -q "^deb .*${ppa}" /etc/apt/sources.list /etc/apt/sources.list.d/*; then add-apt-repository ppa:${ppa}; fi;)
 	@echo $(divider)
 	@echo "Finished installing ppas."
@@ -87,7 +88,8 @@ pip:
 	@echo $(divider)
 	@echo "Installing pip packages."
 	@echo $(divider)
-	pip3 install $(pip)
+	# tail -n +1 does nothing to the string itself, but knows how to close a f*ckin' pip -> no more broken pipes
+	$(foreach package, $(pip), if ! pip3 list | tail -n +1 |grep -q "${package}"; then pip3 install ${package}; fi;)
 	@echo $(divider)
 	@echo "Done installing pip packages."
 
