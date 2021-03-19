@@ -12,11 +12,16 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " language specific
 Plug 'lervag/vimtex'
-" interface/UI
+" interface/UI, multiple color schemes
+" so I can swap whenever I feel like it
 Plug 'arcticicestudio/nord-vim'
-Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
 call plug#end()
+
+" === VIMTEX ===
+let g:vimtex_mappings_enabled=0
 
 " === LIGHTLINE config ===
 let g:lightline = {

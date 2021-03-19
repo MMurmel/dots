@@ -18,7 +18,7 @@ set wildmode=longest,list   " get bash-like tab completions
 
 " colorscheme
 set termguicolors " use true colors
-colorscheme onedark
+colorscheme nord
 
 " indentation
 set tabstop=4 " tab is 4 spaces
@@ -44,3 +44,6 @@ set undolevels=1000 " use more undo levels
 " timing
 set updatetime=100
 set timeoutlen=500 " timeout for leader key
+
+" concealment for tex files
+autocmd BufNewFile,BufRead *.tex set conceallevel=2
