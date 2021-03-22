@@ -11,8 +11,8 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 
 " navigation
 " ctrl+l/a for moving text without moving cursor
-noremap <C-l> <C-e>
-noremap <C-a> <C-y>
+noremap <C-a> <C-e>
+noremap <C-l> <C-y>
 " ctrl+e/i to redo/undo last jump and center line vertically
 noremap <C-e> <C-i>zz
 noremap <C-i> <C-o>zz
