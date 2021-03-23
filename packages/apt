@@ -22,6 +22,8 @@ gparted
 lua5.3
 nemo
 texlive-full
+snapd
+curl
 
 # web
 firefox
