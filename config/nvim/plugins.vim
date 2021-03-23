@@ -47,4 +47,4 @@ let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeGitStatusUseNerdFonts = 1
-
+let NERDTreeShowHidden=1
