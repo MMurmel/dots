@@ -17,7 +17,7 @@ pip = $(shell grep "^[^\#]" $(dir)pip)
 snaps = $(shell grep "^[^\#]" $(dir)snap)
 snaps_classic = $(shell grep "^[^\#]" $(dir)snap-classic)
 
-all: ppas apt snaps pip fonts cleanup 
+all: ppas apt snaps pip fonts cleanup
 core: apt snaps pip cleanup
 
 info:
@@ -51,13 +51,6 @@ info:
 	@echo -e $(snaps_classic) | tr ' ' '\n'
 	@echo $(divider)
 	
-fonts:
-	@echo $(divider)
-	@echo "Extracting fonts."
-	@echo $(divider)
-	$(foreach font,$(fonts), wget $(font) -O temp.zip; unzip temp.zip -d /usr/share/fonts/truetype/; rm temp.zip;)
-	fc-cache -f -v
-
 ppas:	
 	@echo $(divider)
 	@echo "Adding PPAs"
@@ -92,6 +85,13 @@ pip:
 	$(foreach package, $(pip), if ! pip3 list | tail -n +1 |grep -q "${package}"; then pip3 install ${package}; fi;)
 	@echo $(divider)
 	@echo "Done installing pip packages."
+
+fonts:
+	@echo $(divider)
+	@echo "Extracting fonts."
+	@echo $(divider)
+	$(foreach font,$(fonts), wget $(font) -O temp.zip; unzip temp.zip -d /usr/share/fonts/truetype/; rm temp.zip;)
+	fc-cache -f -v
 
 cleanup:
 	@echo $(divider)
