@@ -8,6 +8,7 @@
 - link:
     ~/.gitconfig: config/gitconfig
     ~/.bash_aliases: config/bash_aliases
+    ~/.config/Nextcloud/sync-exclude.lst: config/nextcloud-ignore
     ~/.config/:
       glob: true
       path: config/*
