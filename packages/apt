@@ -25,6 +25,11 @@ texlive-full
 snapd
 curl
 
+#vpn
+openconnect
+network-manager-openconnect
+network-manager-openconnect-gnome
+
 # web
 firefox
 thunderbird
