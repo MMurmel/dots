@@ -49,3 +49,4 @@ Texfiles
 *.dvi
 *.xdv
 *-converted-to.*
+]__pycache__/
