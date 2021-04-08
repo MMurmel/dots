@@ -2,6 +2,7 @@
 python3-dev
 python3-pip
 python3-setuptools
+gucharmap
 
 # ricing
 regolith-desktop-standard
@@ -46,3 +47,8 @@ nextcloud-desktop
 
 # entertainment
 steam
+
+# robolab
+tmux
+docker
+docker-compose
