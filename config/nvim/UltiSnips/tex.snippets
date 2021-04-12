@@ -1,0 +1,21 @@
+snippet beg "begin{} / end{}" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+# Inline Math knowing wether to insert a space afterwards. 
+snippet mm "Inline Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+# Display Math
+snippet dm "Display Math" wA
+\[
+$1
+.\] $0
+endsnippet

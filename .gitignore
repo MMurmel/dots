@@ -1,4 +1,5 @@
 #since vim plug installs the plugins in nvims config folder
 config/nvim/*
+!config/nvim/UltiSnips/
 !config/nvim/*.vim
 config/regolith/flags/*

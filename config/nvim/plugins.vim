@@ -10,6 +10,7 @@ call plug#begin()
 " essentials
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'SirVer/ultisnips'
 " language specific
 Plug 'lervag/vimtex'
 " interface/UI, multiple color schemes
@@ -22,6 +23,11 @@ call plug#end()
 
 " === VIMTEX ===
 let g:vimtex_mappings_enabled=0
+
+" === UltiSnips ===
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " === LIGHTLINE config ===
 let g:lightline = {
