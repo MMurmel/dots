@@ -2,7 +2,7 @@
 My dotfiles.
 
 ## Prerequisites
-`sudo apt install build-essentials git`
+`sudo apt install build-essential git`
 and clone this repository
 
 ## Installation
