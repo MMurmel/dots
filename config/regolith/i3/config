@@ -495,15 +495,15 @@ focus_follows_mouse $i3-wm.gaps.focus_follows_mouse
 ###############################################################################
 # Auto assignement of windows
 ###############################################################################
-assign [class="java-lang-Thread"] $ws2
-assign [class="jetbrains-idea"] $ws2
-assign [class="jetbrains-clion"] $ws2
-assign [class="(?i)code"] $ws2
-assign [class="(?i)gitkraken"] $ws4
+assign [class="java-lang-Thread"] $ws10
+assign [class="jetbrains-idea"] $ws10
+assign [class="jetbrains-clion"] $ws10
+assign [class="(?i)code"] $ws10
+assign [class="(?i)gitkraken"] $ws9
 # workaround since spotify is bugged
-for_window [class="(?i)Spotify"] move to workspace $ws14
-assign [class="(?i)element"] $ws15
-assign [class="(?i)Slack"] $ws16
+for_window [class="(?i)Spotify"] move to workspace $ws16
+assign [class="(?i)element-"] $ws17
+assign [class="(?i)Slack"] $ws17
 assign [class="(?i)TelegramDesktop"] $ws17
 assign [class="(?i)Thunderbird"] $ws18
 assign [class="discord" instance="discord"] $ws19
