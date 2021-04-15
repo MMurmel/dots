@@ -1,3 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "packages/polybar"]
+	path = packages/polybar
+	url = https://github.com/polybar/polybar.git
