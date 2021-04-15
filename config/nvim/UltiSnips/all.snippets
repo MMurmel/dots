@@ -1,3 +1,23 @@
+global !p
+def get_comment_format():
+    """ Returns a 4-element tuple (first_line, middle_lines, end_line, indent)
+    representing the comment format for the current file.
+
+    It first looks at the 'commentstring', if that ends with %s, it uses that.
+    Otherwise it parses '&comments' and prefers single character comment
+    markers if there are any.
+    """
+    commentstring = vim.eval("&commentstring")
+    if commentstring.endswith("%s"):
+        c = commentstring[:-2]
+        return (c, c, c, "")
+    comments = _parse_comments(vim.eval("&comments"))
+    for c in comments:
+        if c[0] == "SINGLE_CHAR":
+            return c[1:]
+    return comments[0][1:]
+endglobal
+
 snippet sign "Signature"
 Yours sincerely,
 
@@ -22,5 +42,12 @@ snippet box "Box"
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
+snippet cbox "Comment box with filetype matching comment"
+`!p snip.rv = get_comment_format()[0]` `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+`!p snip.rv = get_comment_format()[1]` │ $1 │
+`!p snip.rv = get_comment_format()[2]` `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet
