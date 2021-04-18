@@ -30,24 +30,28 @@ Mit freundlichen Grüßen
 Maximilian Moeller
 endsnippet
 
-snippet today "Date"
+snippet today "english date" i
 `date +%F`
 endsnippet
 
-snippet heute "Date"
+snippet heute "Deutsches Datum" i
 `date +%d.%m.%Y`
 endsnippet
 
-snippet box "Box"
+snippet Heute "Deutsches Datum mit Wochentag" i
+`date "+%A, %d.%m."`
+endsnippet
+
+snippet box "Box" i
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet
 
-snippet cbox "Comment box with filetype matching comment"
-`!p snip.rv = get_comment_format()[0]` `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
-`!p snip.rv = get_comment_format()[1]` │ $1 │
-`!p snip.rv = get_comment_format()[2]` `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+snippet cbox "Comment box with filetype matching comment" i
+`!p snip.rv = get_comment_format()[0]``!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+`!p snip.rv = get_comment_format()[1]`│ $1 │
+`!p snip.rv = get_comment_format()[2]``!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet

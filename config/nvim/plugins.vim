@@ -45,6 +45,8 @@ let g:lightline = {
 " automatically start NERDTree on opening vim without file specification
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" ignore certain files
+let NERDTreeIgnore=['\.synctex.gz$']
 
 " automatically close NERDTree if it is the last window
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
