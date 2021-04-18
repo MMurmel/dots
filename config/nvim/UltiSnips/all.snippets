@@ -42,16 +42,16 @@ snippet Heute "Deutsches Datum mit Wochentag" i
 `date "+%A, %d.%m."`
 endsnippet
 
-snippet box "Box" i
+snippet box "Box" w
 `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
 │ $1 │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet
 
-snippet cbox "Comment box with filetype matching comment" i
-`!p snip.rv = get_comment_format()[0]``!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
-`!p snip.rv = get_comment_format()[1]`│ $1 │
-`!p snip.rv = get_comment_format()[2]``!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+snippet cbox "Comment box with filetype matching comment" w
+`!p snip.rv = get_comment_format()[0]` `!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+`!p snip.rv = get_comment_format()[1]` │ $1 │
+`!p snip.rv = get_comment_format()[2]` `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
 endsnippet
