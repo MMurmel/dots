@@ -24,7 +24,7 @@ colorscheme nord
 set tabstop=4 " tab is 4 spaces
 set shiftwidth=4 " for autoindentation
 set autoindent " always set autoindenting on
-set copyindent " copy the previous indentation on autoindenting
+set smartindent " tries to infer indent by context
 
 " numbers and sidelines
 set number " always show line numbers
@@ -37,6 +37,9 @@ set hlsearch " highlight search terms
 set incsearch " show search matches as you type
 set smartcase " ignore case if search pattern is all lowercase, case-sensitive otherwise
 
+" spell checking
+set spelllang=de,en_us
+
 " history & undos
 set history=1000 " remember more commands and search history
 set undolevels=1000 " use more undo levels
@@ -47,3 +50,4 @@ set timeoutlen=500 " timeout for leader key
 
 " concealment for tex files
 autocmd BufNewFile,BufRead *.tex set conceallevel=2
+autocmd BufNewFile,BufRead *.tex setlocal spell

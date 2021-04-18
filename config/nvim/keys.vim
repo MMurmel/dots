@@ -33,3 +33,6 @@ cmap w!! w !sudo tee % >/dev/null
 nmap <leader>xx <plug>(vimtex-compile)
 nmap <leader>xv <plug>(vimtex-view)
 nmap <leader>xc <plug>(vimtex-clean)
+
+" correct last spelling mistake
+inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
