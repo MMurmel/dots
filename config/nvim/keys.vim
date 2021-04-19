@@ -37,6 +37,11 @@ nmap <leader>xx <plug>(vimtex-compile)
 nmap <leader>xv <plug>(vimtex-view)
 nmap <leader>xc <plug>(vimtex-clean)
 
+" ULTISnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 " Spellchecking
 " toggle spell check
 nnoremap <F8> :setlocal spell!<CR>

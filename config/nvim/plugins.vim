@@ -25,9 +25,6 @@ call plug#end()
 let g:vimtex_mappings_enabled=0
 
 " === UltiSnips ===
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " === LIGHTLINE config ===
 let g:lightline = {
