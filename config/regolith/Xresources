@@ -24,6 +24,7 @@ i3-wm.binding.split_h: h
 i3-wm.binding.help: Shift+h
 
 ! Appearance
+i3-wm.window.border.size: 3
 i3-wm.gaps.inner.size: 6
 i3-wm.gaps.outer.size: 0
 
