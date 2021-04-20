@@ -75,9 +75,6 @@ set_from_resource $ws20 i3-wm.workspace.20.name 20
 # Assign workspaces to outputs
 ###############################################################################
 workspace "$ws1" output DP-2
-workspace "$ws2" output DP-4
-workspace "$ws10" output DP-4
-workspace "$ws14" output DP-2
 workspace "$ws15" output DP-2
 workspace "$ws16" output DP-2
 workspace "$ws17" output DP-2
