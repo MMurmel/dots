@@ -255,7 +255,7 @@ schemes:
         cyan:    '#427b58'
         white:   '#928373'
 
-colors: *gruvbox
+colors: *nord
   # Indexed Colors
   #
   # The indexed colors include all colors from 16 to 256.
