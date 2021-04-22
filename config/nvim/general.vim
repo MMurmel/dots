@@ -51,4 +51,5 @@ set timeoutlen=500 " timeout for leader key
 " concealment for tex files
 autocmd BufNewFile,BufRead *.tex set conceallevel=2
 autocmd BufNewFile,BufRead *.tex setlocal spell
+autocmd BufNewFile,BufRead *.tex setlocal iskeyword+=\
 hi clear Conceal

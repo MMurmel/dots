@@ -17,6 +17,43 @@ def env(name):
 	return x != '0' and y != '0'
 endglobal
 
+# ┌─────────┐
+# │ Imports │
+# └─────────┘
+snippet pac "Package" bA
+\usepackage[${1:options}]{${2:package}}$0
+endsnippet
+
+snippet inp "Incude Tex Files" bA
+\input{$1}$0
+endsnippet
+
+snippet inc "Include Graphic" bA
+\includegraphics{$1}$0
+endsnippet
+
+# ┌─────────────┐
+# │ Text styles │
+# └─────────────┘
+snippet bft "Bold text" wA
+\textbf{$1}$0
+endsnippet
+
+snippet itt "Italian text" wA
+\texit{$1}$0
+endsnippet
+
+context "math()"
+snippet mcal "Math caligraphy" Aw
+\mathcal{$1}
+endsnippet
+
+context "math()"
+snippet mscr "Math script" Aw
+\mathscr{$1}
+endsnippet
+
+
 # ┌──────────────┐
 # │ Environments │
 # └──────────────┘
@@ -24,6 +61,10 @@ snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
 \end{$1}
+endsnippet
+
+snippet lec "New Lecture" bA
+\lecture{${1:Number}}{${2:Date}}{${3:Topic}}$0
 endsnippet
 
 snippet enum "Enumerate" bA
@@ -36,10 +77,6 @@ snippet item "Itemize" bA
 \begin{itemize}
 	\item $0
 \end{itemize}
-endsnippet
-
-snippet pac "Package" bA
-\usepackage[${1:options}]{${2:package}}$0
 endsnippet
 
 # Inline Math knowing wether to insert a space afterwards. 
@@ -121,6 +158,7 @@ snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}$0
 endsnippet
 
+context "math()"
 snippet / "Fraction" i
 \\frac{${VISUAL}}{$1}$0
 endsnippet
@@ -129,21 +167,25 @@ endsnippet
 # │ Letter modifiers │
 # └──────────────────┘
 priority 10
-snippet bar "bar" w
+context "math()"
+snippet bar "bar"
 \overline{$1}$0
 endsnippet
 
 priority 10
+context "math()"
 snippet hat "hat"
 \hat{$1}$0
 endsnippet
 
 priority 10
-snippet tilde "tilde"
+context "math()"
+snippet "til?d?e?" "tilde" r
 \tilde{$1}$0
 endsnippet
 
 priority 10
+context "math()"
 snippet vec "vector"
 \vec{$1}$0
 endsnippet
@@ -152,31 +194,37 @@ endsnippet
 # │ Postfix snippets │
 # └──────────────────┘
 priority 100
+context "math()"
 snippet "([a-zA-Z])bar" "bar" ri
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 100
+context "math()"
 snippet "([a-zA-Z])dot" "dot" ri
 \dot{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 100
+context "math()"
 snippet "([a-zA-Z])hat" "hat" r
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 100
+context "math()"
 snippet "([a-zA-Z]{2,})hat" "wide hat" r
 \widehat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 100
+context "math()"
 snippet "\b([a-zA-Z])til?d?e?" "tilde" r
 \tilde{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 100
+context "math()"
 snippet "([a-zA-Z]{2,})til?d?e?" "wide tilde" r
 \widetilde{`!p snip.rv=match.group(1)`}
 endsnippet
@@ -184,3 +232,342 @@ endsnippet
 # ┌──────────────────────┐
 # │ Mathematical symbols │
 # └──────────────────────┘
+# special sets and set relations
+context "math()"
+snippet nul "The empty set" A
+\emptyset
+endsnippet
+
+context "math()"
+snippet NN "Natural Numbers" Aw
+\N
+endsnippet
+
+context "math()"
+snippet ZZ "Whole Numbers" Aw
+\Z
+endsnippet
+
+context "math()"
+snippet QQ "Rational Numbers" Aw
+\Q
+endsnippet
+
+context "math()"
+snippet RR "Real Numbers" Aw
+\R
+endsnippet
+
+context "math()"
+snippet CC "Complex Numbers" Aw
+\C
+endsnippet
+
+context "math()"
+snippet in "element of" Aw
+\in
+endsnippet
+
+context "math()"
+snippet nin "not element of" Aw
+\notin
+endsnippet
+
+context "math()"
+snippet sub "Subset" Aw
+\subset
+endsnippet
+
+context "math()"
+snippet Sub "Subset or equal" Aw
+\subseteq
+endsnippet
+
+context "math()"
+snippet sup "Supset" Aw
+\supset
+endsnippet
+
+context "math()"
+snippet Sup "Supset or equal" Aw
+\supseteq
+endsnippet
+
+context "math()"
+snippet cup "set union" Aw
+\cup
+endsnippet
+
+context "math()"
+snippet cap "set intersection" Aw
+\cap
+endsnippet
+
+# logics
+context "math()"
+snippet EE "Exists quantifier" Aw
+\exists
+endsnippet
+
+context "math()"
+snippet AA "For all quantifier" Aw
+\forall
+endsnippet
+
+context "math()"
+snippet => "Implies" Aw
+\implies
+endsnippet
+
+context "math()"
+snippet =< "Implied by" Aw
+\impliedby
+endsnippet
+
+context "math()"
+snippet '(iff|gdw)' "equivalence" Ar
+\iff
+endsnippet
+
+context "math()"
+snippet top "top/true/tautology" Aw
+\top
+endsnippet
+
+context "math()"
+snippet bot "bottom/false/contradiction" Aw
+\bot
+endsnippet
+
+context "math()"
+snippet equi "Equivalence" Aw
+\equiv
+endsnippet
+
+context "math()"
+snippet neg "Negation" Aw
+\neg
+endsnippet
+
+context "math()"
+snippet not "Negation" Aw
+\neg
+endsnippet
+
+context "math()"
+snippet and "Conjunction" Aw
+\land
+endsnippet
+
+context "math()"
+snippet or "Disjunction" Aw
+\lor
+endsnippet
+
+context "math()"
+snippet scup "squared cup" Aw
+\sqcup
+endsnippet
+
+context "math()"
+snippet scap "squared cap" Aw
+\sqcap
+endsnippet
+
+context "math()"
+snippet sqsub "squared subset" Aw
+\sqsubset
+endsnippet
+
+context "math()"
+snippet nsqsub "not squared subset" Aw
+\not\sqsubseteq
+endsnippet
+
+context "math()"
+snippet model "Models" Aw
+\vDash
+endsnippet
+
+context "math()"
+snippet nmodel "Not Models" Aw
+\vDash
+endsnippet
+
+context "math()"
+snippet cons "Syntactic consequence" Aw
+\vdash
+endsnippet
+
+context "math()"
+snippet ncons "Not syntactic consequence" Aw
+\nvdash
+endsnippet
+
+context "math()"
+snippet Cons "Syntactic consequence with double ||" Aw
+\Vdash
+endsnippet
+
+context "math()"
+snippet nCons "Not snyntactic consequence with double ||" Aw
+\nVdash
+endsnippet
+
+# comparisons
+context "math()"
+snippet := "Defined" Aw
+\coloneqq
+endsnippet
+
+context "math()"
+snippet =d "Defined equal" Aw
+\defeq
+endsnippet
+
+context "math()"
+snippet >= "Greater equal" Aw
+\geq
+endsnippet
+
+context "math()"
+snippet <= "Less equal" Aw
+\leq
+endsnippet
+
+context "math()"
+snippet != "not equal" Aw
+\neq
+endsnippet
+
+context "math()"
+snippet << "<<" Aw
+\ll
+endsnippet
+
+context "math()"
+snippet >> ">>" Aw
+\gg
+endsnippet
+
+# arrows
+context "math()"
+snippet -> "to" Aw
+\to
+endsnippet
+
+context "math()"
+snippet |-> "maps to" Aw
+\mapsto
+endsnippet
+
+# brackets and parentheses
+context "math()"
+snippet lr( "left( right)" Ai
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+context "math()"
+snippet lr| "left| right|" Ai
+\left| ${1:${VISUAL}} \right| $0
+endsnippet
+
+context "math()"
+snippet lr{ "left\{ right\}" Ai
+\left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+context "math()"
+snippet lr[ "left[ right]" Ai
+\left[ ${1:${VISUAL}} \right] $0
+endsnippet
+
+context "math()"
+snippet lr< "left< right>" Ai
+\left< ${1:${VISUAL}} \right> $0
+endsnippet
+
+context "math()"
+snippet norm "Norm with single |" Aw
+\lvert ${1:${VISUAL}} \rvert $0
+endsnippet
+
+context "math()"
+snippet Norm "Norm with double ||" Aw
+\lVert ${1:${VISUAL}} \rVert $0
+endsnippet
+
+# special functions
+context "math()"
+snippet part "d/dx" w
+\frac{\partial ${1:V}}{\partial ${2:x}} $0
+endsnippet
+
+context "math()"
+snippet sq "\sqrt{}" Aw
+\sqrt{${1:${VISUAL}}} $0
+endsnippet
+
+context "math()"
+snippet nab "Nabla" Aw
+\nabla
+endsnippet
+
+context "math()"
+snippet lap "Laplace" Aw
+\Delta
+endsnippet
+
+context "math()"
+snippet xx "cross" Aw
+\times
+endsnippet
+
+context "math()"
+snippet ** "cdot" Aw
+\cdot
+endsnippet
+
+# sum-like symbols with running index
+context "math()"
+snippet sum "sum" w
+\sum_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
+endsnippet
+
+context "math()"
+snippet prod "product" w
+\prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
+endsnippet
+
+context "math()"
+snippet Cap "big intersection" w
+\bigcap_{${1:n=${2:1}}} ${3:${VISUAL}} $0
+endsnippet
+
+context "math()"
+snippet Cup "big union" w
+\bigcup_{${1:n=${2:1}}} ${3:${VISUAL}} $0
+endsnippet
+
+context "math()"
+snippet And "big conjunction" w
+\bigwedge_{${1:n=${2:1}}} ${3:${VISUAL}} $0
+endsnippet
+
+context "math()"
+snippet Or "big disjunction" w
+\bigvee_{${1:n=${2:1}}} ${3:${VISUAL}} $0
+endsnippet
+
+context "math()"
+snippet lim "limit" w
+\lim_{${1:n} \to ${2:\infty}}
+endsnippet
+
+# ┌───────────────┐
+# │ Miscellaneous │
+# └───────────────┘
+context "math()"
+snippet contra "Contradiction" Aw
+\contra
+endsnippet
