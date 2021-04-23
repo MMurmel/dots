@@ -39,6 +39,7 @@ set smartcase " ignore case if search pattern is all lowercase, case-sensitive o
 
 " spell checking
 set spelllang=de,en_us
+set spellfile=~/dotfiles/config/nvim/spell/custom.utf-8.add
 
 " history & undos
 set history=1000 " remember more commands and search history
@@ -47,6 +48,9 @@ set undolevels=1000 " use more undo levels
 " timing
 set updatetime=100
 set timeoutlen=500 " timeout for leader key
+
+" add snippets etc. of current course
+set rtp+=~/current_course
 
 " concealment for tex files
 autocmd BufNewFile,BufRead *.tex set conceallevel=2
