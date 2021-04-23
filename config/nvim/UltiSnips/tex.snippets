@@ -325,7 +325,12 @@ snippet =< "Implied by" Aw
 endsnippet
 
 context "math()"
-snippet '(iff|gdw)' "equivalence" Ar
+snippet iff "equivalence" Aw
+\iff
+endsnippet
+
+context "math()"
+snippet gdw "equivalence" Aw
 \iff
 endsnippet
 
@@ -375,12 +380,12 @@ snippet scap "squared cap" Aw
 endsnippet
 
 context "math()"
-snippet sqsub "squared subset" Aw
+snippet ssub "squared subset" Aw
 \sqsubset
 endsnippet
 
 context "math()"
-snippet nsqsub "not squared subset" Aw
+snippet nssub "not squared subset" Aw
 \not\sqsubseteq
 endsnippet
 
@@ -504,7 +509,7 @@ snippet part "d/dx" w
 endsnippet
 
 context "math()"
-snippet sq "\sqrt{}" Aw
+snippet sqrt "\sqrt{}" Aw
 \sqrt{${1:${VISUAL}}} $0
 endsnippet
 
