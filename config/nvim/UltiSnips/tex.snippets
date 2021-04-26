@@ -211,8 +211,13 @@ snippet "\b([a-zA-Z])dot" "dot" ri
 endsnippet
 
 context "math()"
-snippet "\b([a-zA-Z])hat" "hat" ri
+snippet "\b([a-z])hat" "hat for lowercase letters" ri
 \hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet "\b([A-Z])hat" "(wide)hat for uppercase letters" ri
+\widehat{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 100

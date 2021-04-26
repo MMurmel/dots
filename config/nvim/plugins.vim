@@ -22,7 +22,6 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " === VIMTEX ===
-let g:vimtex_mappings_enabled=0
 
 " === UltiSnips ===
 
