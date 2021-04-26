@@ -18,7 +18,7 @@ set wildmode=longest,list   " get bash-like tab completions
 
 " colorscheme
 set termguicolors " use true colors
-colorscheme nord
+colorscheme gruvbox
 
 " indentation
 set tabstop=4 " tab is 4 spaces
