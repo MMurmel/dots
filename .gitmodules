@@ -1,9 +1,3 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "Tela-icon-theme"]
-	path = Tela-icon-theme
-	url = https://github.com/vinceliuice/Tela-icon-theme.git
-[submodule "submodules/Tela-icon-theme"]
-	path = submodules/Tela-icon-theme
-	url = https://github.com/vinceliuice/Tela-icon-theme.git
