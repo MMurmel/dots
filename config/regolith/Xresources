@@ -61,4 +61,4 @@ i3-wm.workspace.19.name: WORKSPACE(19, )
 i3-wm.workspace.20.name: WORKSPACE(20, )
 
 i3xrocks.date.format2: "%a %d.%m. %k:%M"
-rofi.icon-theme: ubuntu-mono-dark
+gnome.wallpaper: ~/dotfiles/resources/astronaut.png
