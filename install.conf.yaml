@@ -14,6 +14,7 @@
       glob: true
       path: config/*
       relink: true
+      exclude: [config/gitconfig, config/gitignore_global, config/bash_aliases, config/nextcloud-ignore]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
