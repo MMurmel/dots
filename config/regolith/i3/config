@@ -618,4 +618,4 @@ exec --no-startup-id $i3-wm.program.unclutter
 set_from_resource $i3-wm.program.nm-applet i3-wm.program.nm-applet /usr/bin/nm-applet
 exec --no-startup-id $i3-wm.program.nm-applet
 
-exec --no-startup-id redshift
+exec_always --no-startup-id redshift -c ~/.config/redshift.conf
