@@ -1,1 +1,2 @@
 alias f='fuck'
+alias conf='cd ~/dotfiles/config && nvim'

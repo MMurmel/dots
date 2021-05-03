@@ -495,6 +495,9 @@ assign [class="(?i)Thunderbird"] $ws18
 assign [class="discord" instance="discord"] $ws19
 assign [class="(?i)zoom"] $ws20
 
+# floating windows
+for_window [class="(?i)matplot"] floating enable
+
 ###############################################################################
 # i3 Colors and Fonts
 ###############################################################################

@@ -3,9 +3,6 @@ i3-wm.bar.position:	top
 ! the <>| key on german keyboards
 i3-wm-neo: Mod3
 
-! overriding of many keyboard bindings
-
-!i3-wm.binding.launchen.app: d
 ! Navigation
 i3-wm.binding.ws_next: Mod1+Right
 i3-wm.binding.ws_prev: Mod1+Left
@@ -16,6 +13,7 @@ i3-wm.binding.move_next_free: Shift+Menu
 i3-wm.binding.take_next_free: Mod1+Menu
 i3-wm.binding.inc_gaps: Prior
 i3-wm.binding.dec_gaps: Next
+i3-wm.gaps.focus_follows_mouse: yes
 ! scratchpad
 i3-wm.binding.move_scratchpad: m
 i3-wm.binding.from_scratchpad: Shift+m
@@ -61,4 +59,6 @@ i3-wm.workspace.19.name: WORKSPACE(19, )
 i3-wm.workspace.20.name: WORKSPACE(20, )
 
 i3xrocks.date.format2: "%a %d.%m. %k:%M"
+rofi.icon-theme: Tela
+gnome.icon.theme: Tela
 gnome.wallpaper: ~/dotfiles/resources/astronaut.png
