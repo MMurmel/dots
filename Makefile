@@ -81,7 +81,7 @@ pip:
 	@echo $(divider)
 	@echo "Installing pip packages."
 	@echo $(divider)
-	# tail -n +1 does nothing to the string itself, but knows how to close a f*ckin' pip -> no more broken pipes
+	# tail -n +1 does nothing to the string itself, but knows how to close a f*ckin' pipe -> no more broken pipes
 	$(foreach package, $(pip), if ! pip3 list | tail -n +1 |grep -q "${package}"; then pip3 install ${package}; fi;)
 	@echo $(divider)
 	@echo "Done installing pip packages."
