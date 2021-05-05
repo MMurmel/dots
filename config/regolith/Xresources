@@ -58,6 +58,8 @@ i3-wm.workspace.18.name: WORKSPACE(18, )
 i3-wm.workspace.19.name: WORKSPACE(19, )
 i3-wm.workspace.20.name: WORKSPACE(20, )
 
+i3xrocks.weather.error_message: 
+
 i3xrocks.date.format2: "%a %d.%m. %k:%M"
 rofi.icon-theme: Tela
 gnome.icon.theme: Tela
