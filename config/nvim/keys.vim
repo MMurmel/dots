@@ -1,4 +1,6 @@
-" === KEYMAPS ===
+" ┌─────────────┐
+" │ keybindings │
+" └─────────────┘
 
 " Set ' ' (space) as leader key
 let g:mapleader = " "

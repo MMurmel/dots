@@ -5,11 +5,15 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" === PLUGINS ===
+" ┌─────────────────┐
+" │ List of plugins │
+" └─────────────────┘
+
 call plug#begin()
 " essentials
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips'
 " language specific
 Plug 'lervag/vimtex'
@@ -21,12 +25,21 @@ Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
-" === VIMTEX ===
+" ┌────────┐
+" │ VimTex │
+" └────────┘
+
 let g:vimtex_imaps_enabled = 0
 
-" === UltiSnips ===
+" ┌─────────────────────┐
+" │ nerdtree-git-plugin │
+" └─────────────────────┘
+let g:NERDTreeGitStatusUseNerdFonts = 1
 
-" === LIGHTLINE config ===
+" ┌───────────┐
+" │ lightline │
+" └───────────┘
+
 let g:lightline = {
   \   'colorscheme': 'gruvbox',
   \   'active': {
@@ -38,7 +51,9 @@ let g:lightline = {
   \   'subseparator':{'left': '', 'right': ''},
   \ }
 
-" === NERD TREE configs ===
+" ┌──────────┐
+" │ NerdTree │
+" └──────────┘
 " automatically start NERDTree on opening vim without file specification
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif

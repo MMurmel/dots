@@ -1,4 +1,7 @@
-" === GENERAL SETTINGS ===
+" ┌──────────────────┐
+" │ general settings │
+" └──────────────────┘
+
 " basics
 set nocompatible
 filetype plugin indent on " filetype detection, autoloading of filetype plugins and indentation
