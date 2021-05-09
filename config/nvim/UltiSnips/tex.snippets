@@ -63,6 +63,16 @@ snippet tt "Text in math environment" Aw
 \text{$1}
 endsnippet
 
+context "math()"
+snippet vv "variables" Aw
+\var{$1}
+endsnippet
+
+context "math()"
+snippet ff "function" Aw
+\func
+endsnippet
+
 # ┌──────────────┐
 # │ Environments │
 # └──────────────┘
@@ -418,12 +428,12 @@ snippet nsSub "not squared subset" Aw
 endsnippet
 
 context "math()"
-snippet model "Models" Aw
+snippet sat "Models" Aw
 \vDash
 endsnippet
 
 context "math()"
-snippet nmodel "Not Models" Aw
+snippet nsat "Not Models" Aw
 \vDash
 endsnippet
 
@@ -452,12 +462,6 @@ context "math()"
 snippet := "Defined" Aw
 \coloneqq
 endsnippet
-
-context "math()"
-snippet <- "Assignement" Aw
-\leftarrow
-endsnippet
-
 
 context "math()"
 snippet =d "Defined equal" Aw
@@ -508,6 +512,11 @@ endsnippet
 context "math()"
 snippet |-> "maps to" Aw
 \mapsto
+endsnippet
+
+context "math()"
+snippet <- "Assignement" Aw
+\leftarrow
 endsnippet
 
 # brackets and parentheses
