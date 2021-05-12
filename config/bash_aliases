@@ -1,2 +1,3 @@
+alias ls='ls -lh --color=auto'
 alias f='fuck'
 alias conf='cd ~/dotfiles/config && nvim'
