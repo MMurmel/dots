@@ -61,6 +61,6 @@ i3-wm.workspace.20.name: WORKSPACE(20, )
 i3xrocks.weather.error_message: 
 
 i3xrocks.date.format2: "%a %d.%m. %k:%M"
-rofi.icon-theme: Tela
-gnome.icon.theme: Tela
+rofi.icon-theme: Tela-ubuntu
+gnome.icon.theme: Tela-ubuntu
 gnome.wallpaper: ~/dotfiles/resources/astronaut.png
