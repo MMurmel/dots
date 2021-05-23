@@ -11,6 +11,7 @@ redshift
 ranger
 nitrogen
 grub-customizer
+polybar
 
 # regolith packages
 i3xrocks-battery
