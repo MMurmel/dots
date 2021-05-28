@@ -18,4 +18,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [./resources/Tela-icon-theme/install.sh -n ubuntu, Installing gtk theme]
+  - [./resources/Tela-icon-theme/install.sh ubuntu, Installing gtk theme]
