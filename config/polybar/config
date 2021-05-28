@@ -1,0 +1,21 @@
+include-file = $HOME/.config/polybar/includes
+
+[bar/main]
+wm-name = polybar
+width = 100%
+height = 25
+line-size = 2
+offset-y = 0
+fixed-center = true
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+radius = 8
+
+tray-position = right
+
+font-0 = "Roboto Mono Nerd Font Mono:pixelsize=15;2"
+font-1 = "Roboto Mono Nerd Font Mono:pixelsize=17;4"
+
+modules-left = i3 right
+modules-right = left

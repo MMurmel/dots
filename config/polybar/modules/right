@@ -1,0 +1,6 @@
+[module/right]
+type = custom/text
+content = 
+content-background = ${colors.bg}
+content-foreground = ${colors.bg-alt}
+content-font = 2

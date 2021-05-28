@@ -1,0 +1,6 @@
+include-file = $HOME/.config/polybar/colors
+
+include-file = $HOME/.config/polybar/modules/i3
+include-file = $HOME/.config/polybar/modules/right
+include-file = $HOME/.config/polybar/modules/left
+include-file = $HOME/.config/polybar/modules/wlan
