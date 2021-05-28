@@ -20,7 +20,7 @@ noremap <C-e> <C-i>zz
 noremap <C-i> <C-o>zz
 " splits
 nnoremap <silent> <leader>s :split<CR>
-nnoremap <silent> <leader>s :split<CR>
+nnoremap <silent> <leader>v :vsplit<CR>
 " move between splits
 nmap <leader>l <C-w>k
 nmap <leader>i <C-w>h
@@ -30,6 +30,8 @@ nmap <leader>e <C-w>l
 " Nerd Tree
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapOpenVSplit = 'v'
 
 " enable write to protected file without reopening it
 cmap w!! w !sudo tee % >/dev/null
