@@ -59,6 +59,11 @@ snippet mf "Math fracture" Aw
 endsnippet
 
 context "math()"
+snippet bm "Math bold" Aw
+\bm{$1}
+endsnippet
+
+context "math()"
 snippet tt "Text in math environment" Aw
 \text{$1}
 endsnippet
@@ -77,8 +82,8 @@ endsnippet
 # │ Environments │
 # └──────────────┘
 snippet beg "begin{} / end{}" bA
-\begin{$1}
-	$2
+\begin{$1}${2:[$3]}
+	$4
 \end{$1}
 endsnippet
 
@@ -103,6 +108,7 @@ snippet item "Itemize" bA
 \end{itemize}
 endsnippet
 
+priority 1
 context "env('itemize')"
 snippet .. "\item" bA
 \item
@@ -464,6 +470,11 @@ snippet := "Defined" Aw
 endsnippet
 
 context "math()"
+snippet :iff "Logiacally defined" Aw
+\logeq
+endsnippet
+
+context "math()"
 snippet =d "Defined equal" Aw
 \defeq
 endsnippet
@@ -562,6 +573,11 @@ snippet part "d/dx" w
 endsnippet
 
 context "math()"
+snippet pd "partial derivative" w
+\partial${1:_{${2:x}}}{$3}
+endsnippet
+
+context "math()"
 snippet sqrt "\sqrt{}" Aw
 \sqrt{${1:${VISUAL}}}
 endsnippet
@@ -622,6 +638,12 @@ snippet lim "limit" w
 \lim_{${1:n} \to ${2:\infty}}
 endsnippet
 
+context "math()"
+snippet Int "Integral" w
+\int${1:_{$2}}${3:^{\infty}}
+endsnippet
+
+
 # ┌───────────────┐
 # │ Miscellaneous │
 # └───────────────┘
@@ -640,26 +662,6 @@ endsnippet
 
 snippet ie "id est"
 i.e.\
-endsnippet
-
-context "math()"
-snippet ph "phi" Aw
-\phi
-endsnippet
-
-context "math()"
-snippet ps "psi" Aw
-\psi
-endsnippet
-
-context "math()"
-snippet pi "pi" Aw
-\pi
-endsnippet
-
-context "math()"
-snippet DD "Delta" Aw
-\Delta
 endsnippet
 
 # ┌────────────┐

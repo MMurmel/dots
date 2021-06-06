@@ -1,3 +1,11 @@
 alias ls='ls -lh --color=auto'
 alias f='fuck'
 alias conf='cd ~/dotfiles/config && nvim'
+
+alias ga='git add'
+alias gc='git commit'
+alias gps='git push'
+alias gpl='git pull'
+alias gs='git status'
+alias gt='git tree'
+alias gsu='git submodule update --remote'
