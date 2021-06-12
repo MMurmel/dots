@@ -5,7 +5,7 @@ bg2 = #504945
 bg3 = #665c54
 bg4 = #7c6f64
 
-fg0 = fbf1c7
+fg0 = #fbf1c7
 fg1 = #ebdbb2
 fg2 = #d5c4a1
 fg3 = #bdae93
@@ -29,13 +29,9 @@ orange = #d65d0e
 ltorange = #fe8019
 
 transparent = #00000000
-semi-transparent = #CC282828
+semi-transparent = #AA282828
 
 bg = ${self.bg0}
 bg-alt = ${self.bg1}
 fg = ${self.fg1}
 fg-alt = ${self.fg3}
-
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40

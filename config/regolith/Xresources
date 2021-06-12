@@ -30,8 +30,10 @@ i3-wm.binding.focus_parent: p
 
 ! Appearance
 i3-wm.window.border.size: 3
-i3-wm.gaps.inner.size: 6
+i3-wm.gaps.inner.size: 8
 i3-wm.gaps.outer.size: 0
+i3-wm.gaps.top.size: 33
+i3-wm.hide.edge.borders: none
 
 i3-wm.workspace.01.name: 1
 i3-wm.workspace.02.name: 2
@@ -53,6 +55,7 @@ i3-wm.workspace.17.name: 17
 i3-wm.workspace.18.name: 18
 i3-wm.workspace.19.name: 19
 i3-wm.workspace.20.name: 20
+
 
 i3xrocks.weather.error_message: 
 

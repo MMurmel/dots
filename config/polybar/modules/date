@@ -1,0 +1,16 @@
+[module/date]
+type = internal/date
+
+interval = 2.0
+date =  %d.%m.
+time =  %H:%M
+date-alt =  %V, %A
+
+format-background = ${colors.bg-alt}
+
+; Available tokens:
+;   %date%
+;   %time%
+; Default: %date%
+label = %date% %time%
+label-foreground = ${colors.fg}

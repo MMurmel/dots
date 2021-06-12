@@ -16,9 +16,9 @@ label-mode-foreground = ${colors.bg-alt}
 label-mode-background = ${colors.ltyellow}
 
 label-focused = %icon% %index%
-label-focused-foreground = ${colors.fg}
-label-focused-background = ${colors.green}
 label-focused-padding = 1
+label-focused-foreground = ${colors.bg-alt}
+label-focused-background = ${colors.green}
 
 label-unfocused = %icon% %index%
 label-unfocused-padding = 1
@@ -27,8 +27,10 @@ label-unfocused-background = ${colors.bg-alt}
 
 label-visible = %icon% %index%
 label-visible-padding = 1
+label-visible-foreground = ${colors.ltgreen}
+label-visible-background = ${colors.bg-alt}
 
 label-urgent =  %index%
-label-urgent-foreground = ${colors.fg}
-;label-urgent-background = ${colors.ltred}
 label-urgent-padding = 1
+label-urgent-foreground = ${colors.fg}
+label-urgent-background = ${colors.ltred}

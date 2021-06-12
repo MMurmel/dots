@@ -1,21 +1,33 @@
 include-file = $HOME/.config/polybar/includes
 
 [bar/main]
+; general stuff
+monitor = ${env:MONITOR:}
 wm-name = polybar
+wm-restack = i3
+
+; position and width etc.
 width = 100%
+offset-y = 8
+border-left-size=8
+border-right-size=8
 height = 25
+
+override-redirect = true
+
+; fonts
 line-size = 2
-offset-y = 0
-fixed-center = true
-
-background = ${colors.bg}
-foreground = ${colors.fg}
-radius = 8
-
-tray-position = right
-
 font-0 = "Roboto Mono Nerd Font Mono:pixelsize=15;2"
 font-1 = "Roboto Mono Nerd Font Mono:pixelsize=17;4"
 
+; colors
+tray-background = ${colors.bg-alt}
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+; modules
+tray-position = right
+
 modules-left = i3 right
+modules-center = left date right
 modules-right = left
