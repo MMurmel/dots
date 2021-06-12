@@ -1,0 +1,42 @@
+[module/battery]
+type = internal/battery
+
+primary-color = ${colors.yellow}
+secondary-color = ${colors.bg-alt}
+foreground-color = ${colors.fg}
+
+battery = BAT0
+adapter = ADP1
+
+format-charging = <label-charging>
+format-charging-prefix = 
+format-charging-prefix-background = ${self.primary-color}
+format-charging-prefix-foreground = ${self.secondary-color}
+format-charging-prefix-padding = 1
+format-charging-overrline = ${self.primary-color}
+label-charging = %percentage%%
+label-charging-background = ${self.secondary-color}
+label-charging-foreground = ${self.foreground-color}
+label-charging-padding = 1
+
+format-discharging = <label-discharging>
+format-discharging-prefix = 
+format-discharging-prefix-background = ${self.primary-color}
+format-discharging-prefix-foreground = ${self.secondary-color}
+format-discharging-prefix-padding = 1
+format-discharging-overline = ${self.primary-color}
+label-discharging = %percentage%%
+label-discharging-background = ${self.secondary-color}
+label-discharging-foreground = ${self.foreground-color}
+label-discharging-padding = 1
+
+format-full = <label-full>
+format-full-prefix = 
+format-full-prefix-background = ${self.primary-color}
+format-full-prefix-foreground = ${self.secondary-color}
+format-full-prefix-padding = 1
+format-full-overline = ${self.primary-color}
+label-full = %percentage%%
+label-full-background = ${self.secondary-color}
+label-full-foreground = ${self.foreground-color}
+label-full-padding = 1
