@@ -7,6 +7,7 @@ time =  %H:%M
 date-alt =  %V, %A
 
 format-background = ${colors.bg-alt}
+format-padding = 1
 
 ; Available tokens:
 ;   %date%

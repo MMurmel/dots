@@ -31,7 +31,7 @@ ltorange = #fe8019
 transparent = #00000000
 semi-transparent = #AA282828
 
-bg = ${self.bg0}
-bg-alt = ${self.bg1}
+bg = ${self.transparent}
+bg-alt = ${self.bg0}
 fg = ${self.fg1}
 fg-alt = ${self.fg3}

@@ -4,21 +4,16 @@ include-file = $HOME/.config/polybar/includes
 ; general stuff
 monitor = ${env:MONITOR:}
 wm-name = polybar
-wm-restack = i3
 
 ; position and width etc.
 width = 100%
-offset-y = 8
-border-left-size=8
-border-right-size=8
-height = 25
-
-override-redirect = true
+height = 28
+bottom = true
 
 ; fonts
 line-size = 2
-font-0 = "Roboto Mono Nerd Font Mono:pixelsize=15;2"
-font-1 = "Roboto Mono Nerd Font Mono:pixelsize=17;4"
+font-0 = "Roboto Mono Nerd Font Mono:pixelsize=16;4"
+font-1 = "Roboto Mono Nerd Font Mono:pixelsize=28;7"
 
 ; colors
 tray-background = ${colors.bg-alt}

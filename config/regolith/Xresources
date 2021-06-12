@@ -32,7 +32,7 @@ i3-wm.binding.focus_parent: p
 i3-wm.window.border.size: 3
 i3-wm.gaps.inner.size: 8
 i3-wm.gaps.outer.size: 0
-i3-wm.gaps.top.size: 33
+i3-wm.gaps.top.size: 0
 i3-wm.hide.edge.borders: none
 
 i3-wm.workspace.01.name: 1
