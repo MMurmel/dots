@@ -474,6 +474,8 @@ focus_follows_mouse $i3-wm.gaps.focus_follows_mouse
 ###############################################################################
 # Auto assignement of windows
 ###############################################################################
+# no reason not to have zoom on ws1
+assign [class="(?i)zoom"] $ws1
 assign [class="java-lang-Thread"] $ws10
 assign [class="jetbrains-idea"] $ws10
 assign [class="jetbrains-clion"] $ws10
@@ -486,7 +488,6 @@ assign [class="(?i)Slack"] $ws17
 assign [class="(?i)TelegramDesktop"] $ws17
 assign [class="(?i)Thunderbird"] $ws18
 assign [class="discord" instance="discord"] $ws19
-assign [class="(?i)zoom"] $ws20
 
 # floating windows
 for_window [class="(?i)matplot"] floating enable
