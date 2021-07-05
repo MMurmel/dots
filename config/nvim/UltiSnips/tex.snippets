@@ -609,32 +609,42 @@ endsnippet
 # sum-like symbols with running index
 context "math()"
 snippet sum "sum" w
-\sum_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}}
+\sum${1:_{${2:${3:n}=${4:1}}}}${5:^{${7:\infty}}} ${8:${VISUAL}}
 endsnippet
 
 context "math()"
 snippet prod "product" w
-\prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}}
+\prod${1:_{${2:${3:n}=${4:1}}}}${5:^{${7:\infty}}} ${8:${VISUAL}}
 endsnippet
 
 context "math()"
-snippet Cap "big intersection" w
-\bigcap_{${1:n=${2:1}}} ${3:${VISUAL}}
+snippet Cap "big intersection" Aw
+\bigcap${1:_{${2:${3:n}=${4:1}}}}${5:^{$6}} ${7:${VISUAL}}
 endsnippet
 
 context "math()"
-snippet Cup "big union" w
-\bigcup_{${1:n=${2:1}}} ${3:${VISUAL}}
+snippet Cup "big union" Aw
+\bigcup${1:_{${2:${3:n}=${4:1}}}}${5:^{$6}} ${7:${VISUAL}}
 endsnippet
 
 context "math()"
-snippet And "big conjunction" w
-\bigwedge_{${1:n=${2:1}}} ${3:${VISUAL}}
+snippet And "big conjunction" Aw
+\bigwedge${1:_{${2:${3:n}=${4:1}}}}${5:^{$6}} ${7:${VISUAL}}
 endsnippet
 
 context "math()"
-snippet Or "big disjunction" w
-\bigvee_{${1:n=${2:1}}} ${3:${VISUAL}}
+snippet Or "big disjunction" Aw
+\bigvee${1:_{${2:${3:n}=${4:1}}}}${5:^{$6}} ${7:${VISUAL}}
+endsnippet
+
+context "math()"
+snippet sCup "big squared cup" Aw
+\bigsqcup${1:_{${2:${3:n}=${4:1}}}}${5:^{$6}} ${7:${VISUAL}}
+endsnippet
+
+context "math()"
+snippet sCap "big squared cap" Aw
+\bigsqcap${1:_{${2:${3:n}=${4:1}}}}${5:^{$6}} ${7:${VISUAL}}
 endsnippet
 
 context "math()"
@@ -644,9 +654,8 @@ endsnippet
 
 context "math()"
 snippet Int "Integral" w
-\int${1:_{$2}}${3:^{\infty}}
+\int${1:_{${2:-\infty}}}${3:^{${4:\infty}}} ${5:${VISUAL}} d${6:x}
 endsnippet
-
 
 # ┌───────────────┐
 # │ Miscellaneous │
