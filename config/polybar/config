@@ -8,12 +8,10 @@ wm-name = polybar
 ; position and width etc.
 width = 100%
 height = 28
-bottom = true
 
 ; fonts
-line-size = 2
-font-0 = "Roboto Mono Nerd Font Mono:pixelsize=16;4"
-font-1 = "Roboto Mono Nerd Font Mono:pixelsize=28;7"
+line-size = 1
+font-0 = "FiraCode Nerd Font:pixelsize=14;4"
 
 ; colors
 tray-background = ${colors.bg-alt}
@@ -23,6 +21,6 @@ foreground = ${colors.fg}
 ; modules
 tray-position = right
 
-modules-left = i3 right
-modules-center = left date right
-modules-right = left battery
+modules-left = i3
+modules-center = 
+modules-right = date battery

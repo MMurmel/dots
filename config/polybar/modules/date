@@ -2,9 +2,8 @@
 type = internal/date
 
 interval = 2.0
-date =  %a, %d.%m.
-time =  %H:%M
-date-alt =  Week #%V
+date =%a %d.%m.%y
+time =%H:%M
 
 format-background = ${colors.bg-alt}
 format-padding = 1
@@ -13,5 +12,5 @@ format-padding = 1
 ;   %date%
 ;   %time%
 ; Default: %date%
-label = %date% %time%
+label = %date%, %time%
 label-foreground = ${colors.fg}

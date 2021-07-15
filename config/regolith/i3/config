@@ -558,5 +558,5 @@ set_from_resource $i3-wm.program.nm-applet i3-wm.program.nm-applet /usr/bin/nm-a
 exec --no-startup-id $i3-wm.program.nm-applet
 
 # Start redshift and polybar
-exec_always --no-startup-id redshift -c ~/.config/redshift.conf
+exec --no-startup-id redshift -c ~/.config/redshift.conf
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
